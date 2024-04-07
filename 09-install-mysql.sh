@@ -8,3 +8,5 @@ then
  else
     echo "Yor are root user"
 fi
+
+Yum install my sql -y
