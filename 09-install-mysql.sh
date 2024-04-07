@@ -9,4 +9,4 @@ then
     echo "Yor are root user"
 fi
 
-yum install my sql -y
+yum install mysql -y
