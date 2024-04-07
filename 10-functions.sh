@@ -3,12 +3,12 @@
 ID=$(id -u)
 
 VALIDATE(){
-    if [ $? -ne 0 ]
+    if [ $1 -ne 0 ]
     then
-        echo "ERROR:: installing is failed"
+        echo "ERROR:: $2 ... FAILED"
         exit1
     else
-        echo "install is success"
+        echo "$2 ... SUCCESS"
     fi   
 }
 
@@ -20,10 +20,10 @@ VALIDATE(){
         echo "Yor are root user"
     fi # fi means reverce of if, indicating condition end
 
-yum install mysql -y
+    yum install mysql -y
 
-VALIDATE
+    VALIDATE $? "Installing MYSQL"
 
-yum install git -y
+    yum install git -y
 
-VALIDATE
+    VALIDATE $? "installing GIT"
